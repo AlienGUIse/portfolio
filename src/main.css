@@ -1,0 +1,802 @@
+/*Start global*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 10px;
+    font-family: 'Roboto', sans-serif;
+    color: #0c0c0c;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-color: #f7f8fa;
+}
+
+section{
+    padding: 10rem 0;
+}
+
+a{
+    text-decoration: none;
+    color: #f70303;
+}
+
+p{
+    font-size: 1.8rem;
+    font-weight: normal;
+    color: #0c0c0c;
+}
+
+img{
+    width: 100%;
+}
+/*End global*/
+
+/*Start reusable*/
+.container{
+    width: 90%;
+    max-width: 120rem;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.section-heading{
+    text-align: center;
+    margin-bottom: 10rem;
+}
+
+.section-heading h1{
+    font-size: 4rem;
+    color: #45405C;
+    text-transform: uppercase;
+    font-weight: 300;
+    position: relative;
+    margin-bottom: 1rem;
+    font-family: "Fredoka One", sans-serif;
+}
+
+.section-heading h1::before,
+.section-heading h1::after{
+    content: '';
+    position: absolute;
+    bottom: -.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #77BCE6;
+    /*background-color: rgb(32, 165, 175);*/
+}
+
+.section-heading h1::before{
+    width: 10rem;
+    height: 3px;
+    border-radius: .8rem;
+}
+
+.section-heading h1::after{
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 100%;
+    bottom: -1rem;
+}
+
+.section-heading h6{
+    font-size: 1.9rem;
+    font-weight: 300;
+    font-family: "Source Sans Pro SemiBold", sans-serif;
+}
+
+.has-margin-right{
+    margin-right: 5rem;
+}
+/*End reusable*/
+
+/*Start header*/
+header{
+    width: 100%;
+    height: 100vh;
+}
+
+.firstPage{
+    padding: 5rem 0;
+}
+
+.menu-text{
+    text-align: center;
+    font-size: 8rem;
+    margin-top: 8rem;
+    margin-bottom: 8rem;
+    text-align: center;
+}
+
+.landing-text{
+    text-align: center;
+    /*margin-top: 5rem;*/
+}
+
+.landing-text h4{
+    font-family: "Fredoka One", sans-serif;
+    font-size: 4rem;
+    padding: 1.5rem;
+    color: #45405C;
+}
+
+.landing-text .span1{
+    font-size: 2rem;
+    color: #77BCE6;
+}
+
+.landing-text h1{
+    font-size: 16rem;
+    font-family: "Libre Barcode 128 Text", sans-serif;
+    background: linear-gradient(to top, #5be3e6, #ff009f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 1rem;
+    user-select: none;
+}
+
+.landing-text h6{
+    font-size: 2rem;
+    padding: 1.5rem;
+    font-family: "Fredoka One", sans-serif;
+    color: #45405C;
+}
+
+.landing-img{
+    width: auto;
+    height: auto;
+    text-align: center;
+}
+
+.landing-img img{
+    max-width: 60%;
+    max-height: 60%;
+}
+
+
+/*End header*/
+
+/*Start about*/
+.about{
+    margin-top: 10rem;
+}
+
+.about .container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-heading{
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 0;
+    margin-bottom: 6rem;
+}
+
+.about-heading h1{
+    font-size: 10rem;
+    font-family: "Rammetto One",sans-serif;
+    opacity: .3;
+}
+
+.about-heading h6{
+    font-size: 2rem;
+    font-weight: 300;
+    font-family: "Rammetto One", sans-serif;
+}
+
+.profile-img{
+    flex: 1;
+    margin-right: 5rem;
+}
+
+.about-details{
+    flex: 1;
+}
+
+.about-myself {
+    line-height: 32px;
+    text-align: justify;
+    text-justify: inter-word;
+    font-family: "Source Sans Pro SemiBold", sans-serif;
+    font-size: 2.1rem;
+}
+
+.social-media {
+    margin-top: 5rem;
+}
+
+.social-media ul {
+    display: flex;
+    margin-left: 8.5rem;
+}
+
+.social-media ul li {
+    list-style: none;
+}
+
+.social-media ul li a {
+    width: 80px;
+    height: 80px;
+    background-color: #f7f8fa;
+    text-align: center;
+    line-height: 80px;
+    font-size: 35px;
+    margin: 0 10px;
+    display: block;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    border: 3px solid #B1B2B3;
+    z-index: 1;
+}
+
+.social-media ul li a .icon {
+    position: relative;
+    color: #262626;
+    transition: .5s;
+    z-index: 3;
+}
+
+.social-media ul li a:hover .icon {
+    color: #fff;
+    transform: rotateY(360deg);
+}
+
+.social-media ul li a:before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #f00;
+    transition: .5s;
+    z-index: 2;
+}
+
+.social-media ul li a:hover:before {
+    top: 0;
+}
+
+.social-media ul li:nth-child(1) a:before{
+    background: #47aa70;
+}
+
+.social-media ul li:nth-child(2) a:before{
+    background: #ffb64f;
+}
+
+.social-media ul li:nth-child(3) a:before {
+    background: #0077b5;
+}
+
+.social-media ul li:nth-child(4) a:before {
+    background: #dd4b39;
+}
+
+/*End about*/
+
+/*Start services*/
+.my-skills{
+    margin-top: 10rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    grid-gap: 2.5rem;
+    text-align: center;
+}
+
+.skill{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.skill h1{
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin: 2rem -2px 2rem 0;
+    font-size: 2.1rem;
+}
+
+.icon-container{
+    width: 10rem;
+    height: 10rem;
+    border: 3px solid #45405C;
+    background-color: #77BCE6;
+    margin-bottom: 2rem;
+    display: flex;
+    transform: rotate(45deg);
+}
+
+.icon-container i{
+    color: #45405C;
+    font-size: 5rem;
+    margin: auto;
+    transform: rotate(-45deg);
+}
+
+.skill-list{
+    list-style-type:disc;
+    font-family: "Source Sans Pro SemiBold", sans-serif;
+    font-size: 1.7rem;
+}
+
+.skill-list li{
+    padding: 3px;
+    text-align: left;
+    margin-left: 50px;
+}
+
+.achievement li{
+    list-style-type: none;
+    font-family: "Source Sans Pro SemiBold",sans-serif;
+    font-size: 1.7rem;
+    padding: 4.6px;
+}
+
+.achievement-img1{
+    max-width: 70px;
+    max-height: 70px;
+}
+
+.achievement-img2{
+    max-width: 60px;
+    max-height: 60px;
+}
+
+.achievement-img3{
+    max-height: 60px;
+    max-width: 60px;
+}
+/*End services*/
+
+/*Start portfolio*/
+.portfolio-item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5rem;
+}
+
+.portfolio-item.:last-child{
+    margin-bottom: 0;
+}
+
+.portfolio-img{
+    width: 30rem;
+    flex: 1;
+}
+
+.portfolio-description{
+    flex: 3;
+}
+
+.portfolio-description p{
+    font-family: "Source Sans Pro SemiBold", sans-serif;
+    font-size: 1.7rem;
+}
+
+
+.portfolio-description h1{
+    font-size: 3rem;
+    font-weight: 300;
+    margin: 1rem 0;
+    color: #45405C;
+    font-family: "Rammetto One", sans-serif;
+}
+
+.portfolio-description h1 span{
+    font-family: "Source Sans Pro SemiBold", sans-serif;
+    color: #77BCE6;
+}
+
+.portfolio-description .cta{
+    display: inline-block;
+    margin-top: 2.5rem;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color: #77BCE6;
+    transition: color 650ms;
+}
+
+.portfolio-description .cta:hover{
+    color: #4775bd;
+}
+/*End portfolio*/
+
+
+
+/*Start timeline*/
+.timeline .time-ul{
+    border-left: 4px solid #E9AB00;
+    border-radius: .8rem;
+    background-color: #f7f8fa;
+    margin: 0 auto;
+    position: relative;
+    padding: 5rem;
+    list-style: none;
+    text-align: left;
+    width: 70%;
+}
+
+.timeline h1{
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    color: #45405C;
+    font-family: "Rammetto One", sans-serif;
+}
+
+.time-ul .date{
+    padding: 45px;
+}
+
+.timeline .date{
+    border-bottom: 2px solid rgba(255,255,255,0.1);
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    position: relative;
+}
+
+.timeline .date:last-of-type{
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border: none;
+}
+
+.timeline .date::before,
+.timeline .date::after{
+    position: absolute;
+    display: block;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.timeline .date::before{
+    content: attr(data-date);
+    left: -21rem;
+    text-align: right;
+    min-width: 12rem;
+    font-size: 1.5rem;
+    font-family: "Fredoka One",sans-serif;
+}
+
+.timeline .date::after{
+    content: '';
+    box-shadow: 0 0 0 4px #f70303;
+    border-radius: 100%;
+    left: -8rem;
+    height: 1.5rem;
+    width: 1.5rem;
+    background-color: #0077b5;
+}
+
+.work-title{
+    font-family: "Source Sans Pro SemiBold",sans-serif;
+    color: #77BCE6;
+}
+/*End timeline*/
+
+
+/*Start contact*/
+form{
+    width: 70%;
+    margin: 0 auto;
+}
+
+form label{
+    font-size: 1.7rem;
+    font-family: "Source Sans Pro SemiBold", sans-serif;
+}
+
+input,
+select,
+textarea{
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 5px;
+    border: 2px solid #B1B2B3;
+    border-radius: 4px;
+    outline-color: #ff1b04;
+    background-color: #f7f8fa;
+}
+
+input[type="submit"]{
+    width: initial;
+    background-color: #f7f8fa;
+    color: #45405C;
+    padding: 1rem 2rem;
+    border-radius: .8rem;
+    transition: background-color 650ms;
+}
+
+input[type="submit"]:hover{
+    color: #45405C;
+    background-color: #77BCE6;
+}
+/*End contact*/
+
+/*Start footer*/
+.copyright{
+    width: 100%;
+    text-align: center;
+    background-color: #f7f8fa;
+    padding: 2rem 0;
+    position: relative;
+}
+
+.up{
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    background-color: #eee;
+    top: -2.5rem;
+    right: 5rem;
+    border-radius: 100%;
+    display: flex;
+    animation: pulse 2s infinite;
+    cursor: pointer;
+}
+
+.up i{
+    color: #45405C;
+    font-size: 3rem;
+    margin: auto;
+}
+
+.copyright p{
+    font-size: 1.6rem;
+    font-family: "Source Sans Pro SemiBold",sans-serif;
+}
+/*End footer*/
+
+/*Start animations*/
+@keyframes pulse {
+    0%{
+        box-shadow: 0 0 0 0 rgba(119, 188, 230, 1);
+    }
+    60%{
+        box-shadow: 0 0 0 2rem rgba(253, 87, 191, 0);
+    }
+    100%{
+        box-shadow: 0 0 0 0 rgba(253, 87, 191, 0);
+    }
+}
+/*End animations*/
+
+/*Start media queries*/
+@media screen and (max-width: 1920px), screen and (max-height: 700px) {
+    body{
+        background-size: cover;
+        background-color: #f7f8fa;
+    }
+
+    .landing-text h1{
+        font-size: 10rem;
+    }
+    .landing-text h4{
+        font-size: 2.5rem;
+        padding: 0rem;
+    }
+    .landing-text h6{
+        font-size: 1.2rem;
+        padding: 0rem;
+    }
+    .menu-text{
+        margin: 0rem;
+    }
+
+    .menu-button{
+        zoom: 0.65;
+    }
+
+    .landing-img img{
+        max-width: 34%;
+        max-height: 34%;
+    }
+
+    .about-heading h1{
+        font-size: 5rem;
+    }
+
+    .about-heading h6{
+        font-size: 1.5rem;
+    }
+
+    .about-myself{
+        font-size: 1.7rem;
+    }
+
+    .social-media ul{
+        zoom: 0.75;    
+    }
+
+    .profile-img img{
+        width: 80%;
+        margin-right: 0rem;
+    }
+
+    .about-details{
+       margin-left: 0rem;
+    }
+
+    .skill{
+        zoom: 0.9;
+    }
+
+    .timeline{
+        zoom: 0.8;
+    }
+    
+    .portfolio-item {
+        zoom: 0.8;
+    }
+
+    .portfolio-img img{
+        width: 90%;
+    }
+    .achievement li{
+        padding: 3px;
+    }
+
+    .section-heading h1{
+        font-size: 3rem;
+    }
+
+    .about-details .nav-link{
+        flex-direction: initial;
+    }
+
+    .about-details li{
+        margin: 0 2rem;
+    }
+
+    .icon-container{
+        width: 7rem;
+        height: 7rem;
+    }
+
+    icon.contact i{
+        font-size: 4rem;
+    }
+
+    .timeline ul{
+        margin-inside: 0 0 0 auto;
+    }
+
+    .timeline .date:before{
+        left: -20rem;
+    }
+
+    .timeline .date::after{
+        left: -5.9rem;
+    }
+
+}
+
+
+@media screen and (max-width: 768px) {
+    body{
+        background-size: cover;
+        background-color: #f7f8fa;
+    }
+
+
+    .landing-text h1{
+        font-size: 9rem;
+    }
+    .landing-text h6{
+        font-size: 1.3rem;
+    }
+
+    .landing-img img{
+        max-width: 40%;
+        max-height: 40%;
+    }
+
+
+    .about-heading h1{
+        font-size: 8rem;
+    }
+
+    .section-heading h1{
+        font-size: 3rem;
+    }
+
+    .about-details .nav-link{
+        flex-direction: initial;
+    }
+
+    .about-details li{
+        margin: 0 2rem;
+    }
+
+    .icon-container{
+        width: 7rem;
+        height: 7rem;
+    }
+
+    icon.contact i{
+        font-size: 4rem;
+    }
+
+    .timeline ul{
+        margin-inside: 0 0 0 auto;
+    }
+
+    .timeline .date:before{
+        left: -20rem;
+    }
+
+    .timeline .date::after{
+        left: -5.9rem;
+    }
+}
+
+@media screen and (max-width: 600px){
+
+
+    .landing-text h1{
+        font: 5rem;
+    }
+
+    .landing-text h6{
+        font-size: 1.1rem;
+    }
+
+    .landing-img img{
+        max-width: 50%;
+        max-height: 50%;
+    }
+
+
+    .about .container{
+        flex-direction: column;
+    }
+
+    .profile-img{
+        margin: 0 0 7rem 0;
+    }
+
+    .portfolio-item{
+        flex-direction: column;
+    }
+
+    .portfolio-img{
+        margin: 0 0 2rem 0;
+        order: 1;
+    }
+
+    .portfolio-description{
+        margin: 0;
+        order: 2;
+    }
+
+    .timeline p{
+        font-size: 1.6rem;
+    }
+
+    .timeline .date::before{
+        font-size: 1.4rem;
+    }
+
+    form{
+        width: 100%;
+    }
+
+    .up{
+        right: 2rem;
+    }
+}
+/*End media queries*/
